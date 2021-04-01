@@ -12,6 +12,8 @@
 
 <script>
 import { GChart } from 'vue-google-charts'
+import keywords from '../data/keywords'
+
 export default {
   name: 'App',
   components: {
@@ -25,18 +27,16 @@ export default {
     subtitle: {
       type: String,
       default: 'Subtitle'
+    },
+    keyword: {
+      type: Array,
+      default: null
     }
   },
   data () {
     return {
       chartsLib: null,
-      chartData: [
-        ['keyword', 'count'],
-        ['investigation', 1000],
-        ['share', 1170],
-        ['technology', 1100],
-        ['office', 350]
-      ]
+      chartData: keywords.map(el => Array.from(Object.values(el)))
     }
   },
   computed: {

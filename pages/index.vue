@@ -4,7 +4,7 @@
     <div>
       <Title title="KPI Graphs" />
       <div class="container pt-10">
-        <Graphs title="Most used keyword" subtitle="Count of de most used keywords" />
+        <Graphs :keyword="data" title="Most used keyword" subtitle="Count of de most used keywords" />
         <Graphs />
       </div>
     </div>
@@ -12,12 +12,20 @@
 </template>
 
 <script>
+import keywords from '../data/keywords'
 import Header from '~/components/Header.vue'
+
 export default {
   components: {
     Header
+  },
+  data () {
+    return {
+      data: keywords
+    }
   }
 }
+
 </script>
 
 <style>
