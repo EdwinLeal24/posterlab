@@ -1,30 +1,30 @@
 const keywords = [
   {
-    keyword: 'keyword',
+    name: 'keyword',
     count: 'count'
   },
   {
-    keyword: 'investigation',
+    name: 'investigation',
     count: 1000
   },
   {
-    keyword: 'share',
+    name: 'share',
     count: 1100
   },
   {
-    keyword: 'technology',
+    name: 'technology',
     count: 1200
   },
   {
-    keyword: 'office',
+    name: 'office',
     count: 800
   },
   {
-    keyword: 'development',
+    name: 'development',
     count: 970
   },
   {
-    keyword: 'software',
+    name: 'software',
     count: 1100
   }
 ]

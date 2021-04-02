@@ -12,7 +12,6 @@
 
 <script>
 import { GChart } from 'vue-google-charts'
-import keywords from '../data/keywords'
 
 export default {
   name: 'App',
@@ -28,15 +27,27 @@ export default {
       type: String,
       default: 'Subtitle'
     },
-    keyword: {
+    data: {
       type: Array,
       default: null
+    },
+    color: {
+      type: String,
+      default: '#42E3DE'
+    },
+    bar: {
+      type: String,
+      default: ''
+    },
+    width: {
+      type: Number,
+      default: 550
     }
   },
   data () {
     return {
       chartsLib: null,
-      chartData: keywords.map(el => Array.from(Object.values(el)))
+      chartData: !this.data ? null : this.data.map(el => Array.from(Object.values(el)))
     }
   },
   computed: {
@@ -47,10 +58,11 @@ export default {
           title: this.title,
           subtitle: this.subtitle
         },
-        hAxis: { format: 'none' },
-        width: 550,
+        bars: this.bar,
+        hAxis: { format: 'decimal' },
+        width: this.width,
         height: 400,
-        colors: ['#3f8eab']
+        colors: [this.color]
       })
     }
   },
